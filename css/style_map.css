@@ -8,19 +8,59 @@ body{
 }
 
 main{
-    height: 100%;
+    height: 1001px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
 }
 
-/* #map{
-    width: 100%;
+#map{
+    background-image: url('../assets/Westeros.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     height: 100%;
-    display: flex;
-    flex-wrap: wrap;
-} */
+    min-width: 969px;
+}
 
-/* #map img{
-    width: 25%;
-} */
+aside{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30%;
+    min-width: 290px;
+    border-left: 1px solid black;
+    padding-left: 5%;
+    background-image: url('../assets/old_map.png');
+}
+
+#location_list{
+    height: 95%;
+}
+
+#regions{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.region{
+    width: 100%;
+}
+
+.region_title{
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    padding-left: 2px;;
+    margin-bottom: 10px;
+    width: 60%;
+    height: 25px;
+    cursor: pointer;
+}
+
+.region_title img{
+    height: 50%;
+    margin-right: 10px;
+}
