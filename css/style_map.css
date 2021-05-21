@@ -14,23 +14,32 @@ main{
 }
 
 #map{
-    background-image: url('../assets/Westeros.png');
+    background-color: rgb(145, 220, 255);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     height: 100%;
+    width: 100%;
     min-width: 969px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+svg{
+    transform: scaleY(-1);
 }
 
 aside{
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
     justify-content: space-between;
-    width: 30%;
+    width: 20%;
     min-width: 290px;
     border-left: 1px solid black;
     padding-left: 5%;
     background-image: url('../assets/old_map.png');
+    display: none;
 }
 
 #location_list{
@@ -45,22 +54,39 @@ aside{
     margin-top: 20px;
 }
 
-.region{
-    width: 100%;
-}
-
 .region_title{
     border: 1px solid black;
     display: flex;
     align-items: center;
     padding-left: 2px;;
     margin-bottom: 10px;
-    width: 60%;
+    width: 80%;
     height: 25px;
     cursor: pointer;
 }
 
-.region_title img{
-    height: 50%;
-    margin-right: 10px;
+.region_title:hover{
+    background-color: cyan;
+}
+
+text{
+    transform: scaleY(-1);
+    pointer-events: none;
+}
+
+#show_list{
+    position: absolute;
+    right: 0;
+    top: calc(50% - 15px);
+    padding: 10px;
+    border: 1px solid black;
+    border-right: none;
+    height: 20px;
+    background-image: url(../assets/old_map.png);
+    cursor: pointer;
+    z-index: 2;
+}
+
+#show_list img{
+    height: 20px;
 }
