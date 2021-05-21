@@ -1,0 +1,19 @@
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column; 
+}
+
+main {
+    height: 100%;
+    background-image: url("../assets/index_backgroud.jpg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+}
+
+.got {
+    display: flex;
+    align-self: baseline;
+    margin: 3%;
+}

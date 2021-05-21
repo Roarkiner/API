@@ -7,10 +7,14 @@ fetch('https://api.got.show/api/map/regions').then((response) => {
     const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     svg.setAttribute("width", "100%");
     svg.setAttribute("height", "100%");
-    svg.setAttribute('viewBox', "-3 -2 6 6");
+    svg.setAttribute('viewBox', "-2.5 -1.3 5 5");
 
     //Je parcours chaque région dans ma liste de régions
     regions.forEach(region => {
+        //SECTION ECRITURE MENU
+
+
+        //SECTION DESSIN CARTE
         //Je stocke la variable qui contient les coordonées des frontières de la région
         var borders = region.borders;
 
@@ -92,6 +96,7 @@ fetch('https://api.got.show/api/map/regions').then((response) => {
             text.innerHTML = el.dataset.regionName;    
             //Change la taille de la police            
             text.setAttribute('font-size', 0.15 + 'px');
+            text.setAttribute('font-weight', 'bold');
             //Ajoute l'élément dans le même élément g que la région, nécessaire de le faire AVANT de donner une position au texte
             el.parentNode.appendChild(text);
             //Récupère l'élément qu'on vient de mettre, qui a maintenant une largeur et hauteur
@@ -113,9 +118,22 @@ fetch('https://api.got.show/api/map/regions').then((response) => {
             resetMap(el);
         });
     });
-});
 
-//Rendre le bouton de menu cliquable
+    //Rendre le bouton de menu cliquable
+    document.querySelector('#show_list').addEventListener('click', (el) =>{
+        el = el.target;
+        console.log(el);
+        const aside = document.querySelector('aside');
+
+        if(!aside.classList.contains('active')){
+            aside.classList.add('active');
+            document.querySelector('#show_list').querySelector('img').style.transform = 'scaleX(1)';
+        } else {;
+            aside.classList.remove('active');
+            document.querySelector('#show_list').querySelector('img').style.transform = 'scaleX(-1)';
+        }
+    });
+});
 
 
 //Pour colorer la région (sélectionnée en passant la souris dessus ou en sélectionnant son nom dans la liste)
