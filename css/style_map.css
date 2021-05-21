@@ -31,18 +31,49 @@ svg{
 }
 
 aside{
-    flex-direction: column;
-    justify-content: space-between;
     width: 20%;
+    text-align: center;
     min-width: 290px;
     border-left: 1px solid black;
-    padding-left: 5%;
     background-image: url('../assets/old_map.png');
+    display: none;
+    /* overflow: hidden; */
+}
+
+aside::-webkit-scrollbar{
     display: none;
 }
 
+aside h1{
+    padding: 20px 0;
+}
+
+aside h2{
+    font-weight: normal;
+}
+
 #location_list{
-    height: 95%;
+    height: 80%;
+    text-align: left;
+    padding: 0 10px;
+}
+
+#location_list ul{
+    height: 100%;
+    margin-top: 10px;
+    padding: 0 10px;
+    overflow-y: scroll;
+}
+
+.selected{
+    background-color: rgba(50, 50, 50, 0.8);
+}
+
+#location_list ul li{
+    width: 90%;
+    cursor: pointer;
+    border: 1px dotted black;
+    margin-bottom: 5px;
 }
 
 #regions{
@@ -92,5 +123,5 @@ text{
 }
 
 .active{
-    display: flex;
+    display: block;
 }
